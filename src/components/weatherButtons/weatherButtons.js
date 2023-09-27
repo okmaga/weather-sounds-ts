@@ -1,16 +1,18 @@
 import "./weatherButtons.scss";
 import WeatherSelectButton from "../weatherSelectButton/WeatherSelectButton";
 
-function WeatherButtons() {
-  const buttons = [
-    { id: 1, name: "summer" },
-    { id: 2, name: "rain" },
-    { id: 3, name: "winter" }
-  ];
+function WeatherButtons({ musicThemes, themeSwitcher }) {
+  const themes = Object.keys(musicThemes);
+
   const buttonGroupWrapper = document.createElement("div");
   buttonGroupWrapper.classList.add("buttonGroupWrapper");
-  buttons.forEach((button) => {
-    buttonGroupWrapper.appendChild(WeatherSelectButton({ name: button.name }));
+  themes.forEach((theme) => {
+    buttonGroupWrapper.appendChild(
+      WeatherSelectButton({
+        name: musicThemes[theme].name,
+        themeSwitcher
+      })
+    );
   });
 
   return buttonGroupWrapper;
