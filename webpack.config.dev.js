@@ -6,6 +6,10 @@ module.exports = merge(commonConfig, {
   devServer: {
     port: 3000,
     hot: true,
-    open: true
+    open: {
+      app: {
+        name: "Google Chrome"
+      }
+    }
   }
 });
