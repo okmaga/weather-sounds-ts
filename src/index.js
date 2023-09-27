@@ -1,3 +1,5 @@
 import "./index.scss";
-console.log("check webpack");
-console.log(true);
+import App from "./components/App";
+const root = document.getElementById("root");
+
+root.appendChild(App());
