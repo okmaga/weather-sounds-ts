@@ -2,19 +2,38 @@ import "./app.scss";
 import summerBgPath from "../assets/summer-bg.jpg";
 import rainBgPath from "../assets/rainy-bg.jpg";
 import winterBgPath from "../assets/winter-bg.jpg";
+import summerIconPath from "../assets/icons/sun.svg";
+import rainIconPath from "../assets/icons/cloud-rain.svg";
+import winterIconPath from "../assets/icons/cloud-snow.svg";
 import WeatherButtons from "./weatherButtons/weatherButtons";
 
 function App() {
   const musicThemes = {
-    summer: { id: 1, name: "summer", backgroundPath: summerBgPath },
-    rain: { id: 2, name: "rain", backgroundPath: rainBgPath },
-    winter: { id: 3, name: "winter", backgroundPath: winterBgPath }
+    summer: {
+      id: 1,
+      name: "summer",
+      backgroundPath: summerBgPath,
+      iconPath: summerIconPath
+    },
+    rain: {
+      id: 2,
+      name: "rain",
+      backgroundPath: rainBgPath,
+      iconPath: rainIconPath
+    },
+    winter: {
+      id: 3,
+      name: "winter",
+      backgroundPath: winterBgPath,
+      iconPath: winterIconPath
+    }
   };
 
   const startingTheme = "summer";
 
   const player = {
     isPlaying: false,
+    isPaused: true,
     currentTheme: musicThemes[startingTheme]
   };
 

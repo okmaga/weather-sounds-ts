@@ -10,6 +10,8 @@ function WeatherButtons({ musicThemes, themeSwitcher }) {
     buttonGroupWrapper.appendChild(
       WeatherSelectButton({
         name: musicThemes[theme].name,
+        iconPath: musicThemes[theme].iconPath,
+        bgPath: musicThemes[theme].backgroundPath,
         themeSwitcher
       })
     );

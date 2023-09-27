@@ -1,8 +1,12 @@
 import "./weatherSelectButton.scss";
 
-function WeatherSelectButton({ name, themeSwitcher }) {
+function WeatherSelectButton({ name, iconPath, bgPath, themeSwitcher }) {
   const buttonWrapper = document.createElement("div");
-  buttonWrapper.innerText = name;
+  const iconImg = new Image();
+  iconImg.classList.add("iconImg");
+  iconImg.src = iconPath;
+  buttonWrapper.appendChild(iconImg);
+  buttonWrapper.style.backgroundImage = `url(${bgPath})`;
   buttonWrapper.classList.add("weatherSelectButton");
   buttonWrapper.addEventListener("click", () => {
     themeSwitcher(name);
