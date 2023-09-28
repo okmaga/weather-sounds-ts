@@ -40,7 +40,8 @@ function App() {
   const player = new Player(startingTheme);
 
   function themeSwitcher(theme) {
-    if (player.currentTheme.name === theme) {
+    const currentTHeme = player.currentTheme.name;
+    if (currentTHeme === theme) {
       if (player.isPlaying) {
         player.pause();
         return;
