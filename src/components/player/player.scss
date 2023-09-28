@@ -1,0 +1,26 @@
+.audioControlsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 250px;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    opacity: 0.9;
+    -webkit-transition: 0.3s;
+    transition: opacity 0.2s;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(1, 215, 1);
+    cursor: pointer;
+  }
+}
