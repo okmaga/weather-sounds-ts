@@ -1,7 +1,19 @@
 import "./weatherSelectButton.scss";
-import pauseIconePath from "../../assets/icons/pause.svg";
+import pauseIconPath from "../../assets/icons/pause.svg";
 
-function WeatherSelectButton({ name, iconPath, bgPath, themeSwitcher }) {
+interface WeatherSelectButtonProps {
+  name: string;
+  iconPath: string;
+  bgPath: string;
+  themeSwitcher: (theme: string) => void;
+}
+
+function WeatherSelectButton({
+  name,
+  iconPath,
+  bgPath,
+  themeSwitcher
+}: WeatherSelectButtonProps) {
   let isPaused = false;
 
   const buttonWrapper = document.createElement("div");
@@ -13,7 +25,7 @@ function WeatherSelectButton({ name, iconPath, bgPath, themeSwitcher }) {
   iconImg.src = iconPath;
 
   const pauseIcon = new Image();
-  pauseIcon.src = pauseIconePath;
+  pauseIcon.src = pauseIconPath;
   pauseIcon.classList.add("pauseImg");
   pauseIcon.classList.add(`pause-${name}`);
   pauseIcon.style.display = "none";
@@ -25,10 +37,10 @@ function WeatherSelectButton({ name, iconPath, bgPath, themeSwitcher }) {
   buttonWrapper.addEventListener("click", () => {
     const resetIcons = () => {
       Array.from(document.querySelectorAll(".iconImg")).forEach(
-        (themeIcon) => (themeIcon.style.display = "block")
+        (themeIcon) => ((themeIcon as HTMLElement).style.display = "block")
       );
       Array.from(document.querySelectorAll(".pauseImg")).forEach(
-        (themeIcon) => (themeIcon.style.display = "none")
+        (pauseIcon) => ((pauseIcon as HTMLElement).style.display = "none")
       );
     };
 

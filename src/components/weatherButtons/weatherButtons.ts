@@ -1,7 +1,20 @@
 import "./weatherButtons.scss";
 import WeatherSelectButton from "../weatherSelectButton/weatherSelectButton";
 
-function WeatherButtons({ musicThemes, themeSwitcher }) {
+interface WeatherButtonsProps {
+  musicThemes: {
+    [theme: string]: {
+      id: number;
+      name: string;
+      backgroundPath: string;
+      iconPath: string;
+      audioPath: string;
+    };
+  };
+  themeSwitcher: (name: string) => void;
+}
+
+function WeatherButtons({ musicThemes, themeSwitcher }: WeatherButtonsProps) {
   const themes = Object.keys(musicThemes);
 
   const buttonGroupWrapper = document.createElement("div");

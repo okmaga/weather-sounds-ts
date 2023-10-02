@@ -11,8 +11,20 @@ import summerSoundPath from "../assets/sounds/summer.mp3";
 import rainSoundPath from "../assets/sounds/rain.mp3";
 import winterSoundPath from "../assets/sounds/winter.mp3";
 
+interface theme {
+  id: number;
+  name: string;
+  backgroundPath: string;
+  iconPath: string;
+  audioPath: string;
+}
+
+interface MusicThemes {
+  [theme: string]: theme;
+}
+
 function App() {
-  const musicThemes = {
+  const musicThemes: MusicThemes = {
     summer: {
       id: 1,
       name: "summer",
@@ -39,7 +51,7 @@ function App() {
   const startingTheme = musicThemes.summer;
   const player = new Player(startingTheme);
 
-  function themeSwitcher(theme) {
+  function themeSwitcher(theme: string) {
     const currentTHeme = player.currentTheme.name;
     if (currentTHeme === theme) {
       if (player.isPlaying) {
