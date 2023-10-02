@@ -1,5 +1,5 @@
 import "./weatherButtons.scss";
-import WeatherSelectButton from "../weatherSelectButton/WeatherSelectButton";
+import WeatherSelectButton from "../weatherSelectButton/weatherSelectButton";
 
 function WeatherButtons({ musicThemes, themeSwitcher }) {
   const themes = Object.keys(musicThemes);
