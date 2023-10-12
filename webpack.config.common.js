@@ -10,7 +10,7 @@ module.exports = {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    assetModuleFilename: "assets/[name][ext]"
+    assetModuleFilename: "[path][name][ext]"
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"]
@@ -24,6 +24,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, "public/favicon.png"),
           to: path.resolve(__dirname, "dist")
+        },
+        {
+          from: path.resolve(__dirname, "src/assets/sounds"),
+          to: path.resolve(__dirname, "dist/assets/sounds")
         }
       ]
     }),
@@ -52,10 +56,7 @@ module.exports = {
       },
       {
         test: /\.(ogg|mp3|wav|mpe?g)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[path][name].[ext]"
-        }
+        type: "asset/resource"
       },
       {
         test: /\.[tj]sx?$/,
