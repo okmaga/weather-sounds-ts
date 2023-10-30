@@ -23,7 +23,7 @@ interface MusicThemes {
   [theme: string]: theme;
 }
 
-function App() {
+function App(): HTMLDivElement {
   const musicThemes: MusicThemes = {
     summer: {
       id: 1,

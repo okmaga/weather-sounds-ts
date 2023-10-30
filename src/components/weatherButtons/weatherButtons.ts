@@ -14,7 +14,10 @@ interface WeatherButtonsProps {
   themeSwitcher: (name: string) => void;
 }
 
-function WeatherButtons({ musicThemes, themeSwitcher }: WeatherButtonsProps) {
+function WeatherButtons({
+  musicThemes,
+  themeSwitcher
+}: WeatherButtonsProps): HTMLDivElement {
   const themes = Object.keys(musicThemes);
 
   const buttonGroupWrapper = document.createElement("div");

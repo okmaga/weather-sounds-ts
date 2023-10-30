@@ -22,26 +22,26 @@ class Player {
     this.audio.volume = 0.2;
   }
 
-  play() {
+  play(): void {
     this.isPlaying = true;
     this.isPaused = false;
     this.audio.loop = true;
     this.audio.play();
   }
 
-  pause() {
+  pause(): void {
     this.isPlaying = false;
     this.isPaused = true;
     this.audio.pause();
   }
 
-  changeTheme(theme: theme) {
+  changeTheme(theme: theme): void {
     this.currentTheme = theme;
     this.audio.src = theme.audioPath;
     this.audio.play();
   }
 
-  renderPlayer() {
+  renderPlayer(): HTMLDivElement {
     const playerWrapper = document.createElement("div");
     playerWrapper.classList.add("audioControlsWrapper");
     const volumeControl = document.createElement("input");
