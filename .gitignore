@@ -10,8 +10,6 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-src/assets
-src/fonts
 *.local
 
 # Editor directories and files
